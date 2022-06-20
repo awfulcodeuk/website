@@ -26,8 +26,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: localhost:5000/name/website_main:latest
+          tags: localhost:5000/website-main/frontend:latest
       -
         name: Inspect
         run: |
-          docker buildx imagetools inspect localhost:5000/name/website_main:latest
+          docker buildx imagetools inspect localhost:5000/website-main/frontend:latest
