@@ -10,25 +10,29 @@ on:
       - main
 
 jobs:
-  docker:
-    runs-on: self-hosted
-    services:
-      registry:
-        image: registry:2
-        ports:
-          - 5000:5000
+  build_and_push_docker_image:
+    runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v3
-      -
-        name: Build and push to local registry
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install
+
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Build and push to local registry
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
-          tags: localhost:5000/name/app:latest
+          tags: localhost:5000/name/website_main:latest
       -
         name: Inspect
         run: |
-          docker buildx imagetools inspect localhost:5000/name/app:latest
+          docker buildx imagetools inspect localhost:5000/name/website_main:latest
