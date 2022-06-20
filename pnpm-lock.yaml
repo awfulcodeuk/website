@@ -12,6 +12,7 @@ specifiers:
   '@vueuse/head': ^0.7.6
   critters: ^0.0.16
   cross-env: ^7.0.3
+  dotenv: ^16.0.1
   eslint: ^8.17.0
   eslint-plugin-cypress: ^2.12.1
   https-localhost: ^4.7.1
@@ -43,6 +44,7 @@ specifiers:
 dependencies:
   '@vueuse/core': 8.6.0_vue@3.2.37
   '@vueuse/head': 0.7.6_vue@3.2.37
+  dotenv: 16.0.1
   nprogress: 0.2.0
   pinia: 2.0.14_vcmyupim4cga7k7f5hngmth5py
   prism-theme-vars: 0.2.3
@@ -3338,6 +3340,11 @@ packages:
       domelementtype: 2.3.0
       domhandler: 4.3.1
     dev: true
+
+  /dotenv/16.0.1:
+    resolution: {integrity: sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /duplexer/0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
