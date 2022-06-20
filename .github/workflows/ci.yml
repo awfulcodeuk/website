@@ -41,3 +41,12 @@ jobs:
 
       - name: Typecheck
         run: pnpm run typecheck
+  
+  pushtoregistry:
+    runs-on: self-hosted
+    steps:
+      - uses: docker/build-push-action@v3
+        with:
+          image: website_main
+          tags: website
+          registry: localhost
