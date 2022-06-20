@@ -31,11 +31,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: localhost:5000/name/website_main:latest
+          tags: localhost:5000/name/app:latest
 
       - name: Inspect
         run: |
-          docker buildx imagetools inspect localhost:5000/name/website_main:latest
-
-      - name: Cleanup files
-        run: rm -rf ./*
+          docker buildx imagetools inspect localhost:5000/name/app:latest
